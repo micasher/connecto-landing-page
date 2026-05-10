@@ -69,9 +69,12 @@ const content = {
         }
       ],
       audience: [
-        ["חנויות ורשתות עם מבצעים ומוצרים מתחלפים", "עסקים מקומיים עם קהל חוזר"],
-        ["אתרי Ecommerce שרוצים להחזיר לקוחות לרכישה", "עסקים עם עוקבים ברשתות אבל בלי קהילה ישירה"],
-        ["מותגים שרוצים להפיץ עדכונים לפי תחומי עניין", "עסקים שרוצים למדוד מה באמת מניע לקוחות לפעולה"]
+        "תכנים ורשתות עם מבצעים ומוצרים מתחלפים",
+        "עסקים מקומיים עם קהל חוזר",
+        "אתרי Ecommerce שרוצים להחזיר לקוחות לרכישה",
+        "עסקים עם עוקבים ברשתות אבל בלי קהילה ישירה",
+        "מותגים שרוצים להפיץ עדכונים לפי תחומי עניין",
+        "עסקים שרוצים למדוד מה באמת מניע לקוחות לפעולה"
       ],
       faq: [
         { q: "האם קונקטו היא רק מערכת לפתיחת קבוצות?", a: "לא. הקבוצות הן רק חלק מהתשתית. קונקטו כוללת פורטל הצטרפות, נקודות מפגש, הפצת תוכן, מדידה ודוחות שמחברים בין הקהל לתוצאה העסקית." },
@@ -156,8 +159,10 @@ const content = {
       });
 
       const audienceGrid = document.querySelector('[data-grid="audience"]');
-      content.audience.forEach((pair, index) => {
-        const article = createDualPointCard(`קהל יעד ${index + 1}`, pair);
+      content.audience.forEach((text, index) => {
+        const article = document.createElement("article");
+        article.className = "audience-card reveal";
+        article.innerHTML = `<p>${text}</p>`;
         audienceGrid.appendChild(article);
       });
 
