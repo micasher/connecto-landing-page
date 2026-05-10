@@ -636,8 +636,9 @@
       font-weight: 700;
       text-align: center;
       line-height: 1.45;
-      max-width: 36ch;
-      margin-inline: auto;
+      max-width: none;
+      white-space: nowrap;
+      margin-inline: 0;
     }
 
     #results .section-head p {
