@@ -184,33 +184,24 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 0.85rem;
       font-weight: 800;
       color: var(--color-text);
     }
 
-    .brand-mark {
-      width: 2.8rem;
-      height: 2.8rem;
-      flex: 0 0 auto;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(25, 198, 195, 0.14), rgba(127, 231, 196, 0.3));
-      border: 1px solid rgba(25, 198, 195, 0.22);
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      box-shadow: 0 10px 24px rgba(25, 198, 195, 0.12);
+    .brand-logo {
+      display: block;
+      width: auto;
+      max-width: min(100%, 440px);
+      height: auto;
     }
 
-    .brand-mark svg { width: 1.7rem; height: 1.7rem; }
-
-    .brand-copy {
-      display: grid;
-      line-height: 1.1;
+    .brand-logo-header {
+      max-width: clamp(200px, 24vw, 400px);
     }
 
-    .brand-copy span:first-child { font-size: 1.05rem; }
-    .brand-copy span:last-child { font-size: 0.76rem; color: var(--color-text-soft); font-weight: 600; }
+    .brand-logo-footer {
+      max-width: clamp(180px, 22vw, 330px);
+    }
 
     .nav {
       display: flex;
@@ -995,6 +986,7 @@
       padding-top: 1rem;
       border-top: 1px solid rgba(31, 42, 55, 0.08);
       font-size: 0.92rem;
+      text-align: center;
     }
 
     .reveal {
@@ -1079,7 +1071,11 @@
 
       .menu-btn { margin-inline-start: auto; }
 
-      .brand-copy span:last-child {
-        display: none;
+      .brand-logo-header {
+        max-width: 225px;
+      }
+
+      .brand-logo-footer {
+        max-width: 200px;
       }
     }
