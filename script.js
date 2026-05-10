@@ -42,9 +42,31 @@ const content = {
         { title: "התאמה אישית לפי סוג העסק", text: "כך התשתית מתאימה לחנות, שירות או מותג." }
       ],
       results: [
-        { title: "החזר השקעה חזק", metricLabel: "₪1,500 השקעה", metricValue: "₪50,000 הכנסה", text: "לקוח שבנה קהל ישיר והפעיל אותו נכון הצליח לייצר הכנסות משמעותיות מהקהל שכבר התעניין בו." },
-        { title: "גיוס קהל מהיר", metricLabel: "4,000+ מצטרפים", metricValue: "בחודש הראשון", text: "באמצעות נקודות מפגש נכונות, העסק הצליח להעביר קהל קיים לקבוצות פעילות וממוקדות." },
-        { title: "אפקט של הודעה אחת", metricLabel: "15+ הזמנות", metricValue: "מפעילות קבוצות", text: "עדכון נכון לקהל שכבר נמצא בקבוצה יכול להחזיר לקוחות לאתר או להזמנה בצורה מהירה וברורה." }
+        {
+          client: "לקוח 1",
+          title: "החזר חזק על השקעה",
+          stats: [
+            { label: "השקעה", value: "₪1,500" },
+            { label: "הכנסה", value: "₪50,000" },
+            { label: "ROI", value: "X33" }
+          ]
+        },
+        {
+          client: "לקוח 2",
+          title: "גיוס קהל והחזרה לאתר",
+          stats: [
+            { label: "מצטרפים לקבוצות", value: "4,000+" },
+            { label: "חזרו לאתר", value: "3,500+" },
+            { label: "הזמנות", value: "38" }
+          ]
+        },
+        {
+          client: "לקוח 3",
+          title: "אפקט של הודעה אחת",
+          stats: [
+            { label: "מכירות מהודעה", value: "₪10,000" }
+          ]
+        }
       ],
       audience: [
         ["חנויות ורשתות עם מבצעים ומוצרים מתחלפים", "עסקים מקומיים עם קהל חוזר"],
@@ -116,13 +138,19 @@ const content = {
       content.results.forEach((item) => {
         const article = document.createElement("article");
         article.className = "result-card reveal";
+        const statsMarkup = item.stats
+          .map((stat) => `
+            <li class="result-stat">
+              <span class="result-label">${stat.label}</span>
+              <strong class="result-value">${stat.value}</strong>
+            </li>
+          `)
+          .join("");
+
         article.innerHTML = `
-          <span class="chip">${item.title}</span>
-          <div class="metric">
-            <span>${item.metricLabel}</span>
-            <strong>${item.metricValue}</strong>
-          </div>
-          <p>${item.text}</p>
+          <span class="chip">${item.client}</span>
+          <h3 class="result-title">${item.title}</h3>
+          <ul class="result-stats">${statsMarkup}</ul>
         `;
         resultsGrid.appendChild(article);
       });

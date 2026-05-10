@@ -575,30 +575,48 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .result-card .metric {
+    .result-title {
+      margin: 0;
+      font-size: 2rem;
+      line-height: 1.15;
+      color: var(--color-primary-dark);
+    }
+
+    .result-stats {
+      list-style: none;
+      margin: 0;
+      padding: 0;
       display: grid;
-      gap: 0.35rem;
-      padding: 1rem;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(25, 198, 195, 0.08), rgba(127, 231, 196, 0.18));
+      gap: 0.7rem;
     }
 
-    .result-card .metric span {
+    .result-stat {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 0.55rem;
+      border-top: 1px solid rgba(31, 42, 55, 0.1);
+    }
+
+    .result-label {
       color: var(--color-text-soft);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
     }
 
-    .result-card .metric strong {
-      font-size: 1.8rem;
-      line-height: 1.1;
+    .result-value {
+      font-size: 2.05rem;
+      line-height: 1;
+      color: #14a3a2;
+      letter-spacing: -0.02em;
+      font-weight: 800;
     }
-
-    .result-card p { margin: 0; color: var(--color-text-soft); }
 
     .note {
       margin-top: var(--space-6);
       color: var(--color-text-soft);
       font-size: 0.96rem;
+      text-align: center;
     }
 
     .audience-grid,
