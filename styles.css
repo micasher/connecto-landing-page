@@ -200,11 +200,11 @@
     }
 
     .brand-logo-header {
-      max-width: clamp(200px, 24vw, 400px);
+      max-width: clamp(145px, 16vw, 260px);
     }
 
     .brand-logo-footer {
-      max-width: clamp(180px, 22vw, 330px);
+      max-width: clamp(130px, 14vw, 220px);
     }
 
     .nav {
@@ -329,9 +329,10 @@
 
     .hero-copy h1 {
       margin: 0;
-      font-size: clamp(2.35rem, 4.2vw, 4.2rem);
-      line-height: 1.06;
-      letter-spacing: -0.035em;
+      font-size: clamp(2rem, 3.35vw, 3.3rem);
+      line-height: 1.12;
+      letter-spacing: -0.022em;
+      max-width: 28ch;
     }
 
     .hero-copy p {
@@ -977,7 +978,7 @@
     @media (max-width: 760px) {
       .section { padding: 3.5rem 0; }
 
-      .hero-copy h1 { font-size: clamp(2.1rem, 11vw, 3.2rem); }
+      .hero-copy h1 { font-size: clamp(1.85rem, 8vw, 2.7rem); }
 
       .hero-copy {
         max-width: 100%;
@@ -1023,10 +1024,10 @@
       .menu-btn { margin-inline-start: auto; }
 
       .brand-logo-header {
-        max-width: 225px;
+        max-width: 165px;
       }
 
       .brand-logo-footer {
-        max-width: 200px;
+        max-width: 145px;
       }
     }
