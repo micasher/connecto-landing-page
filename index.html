@@ -3,188 +3,436 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Connecto - תשתית שיווק ישירה לעסקים דרך WhatsApp, Telegram, פורטל הצטרפות, אוטומציה ודוחות ביצועים." />
-  <title>Connecto | קהל ישיר. הפעלה חכמה. תוצאות מדידות.</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="קונקטו בונה לעסק קהל ישיר דרך WhatsApp ו-Telegram, פורטל הצטרפות, נקודות מפגש ודוחות תוצאות מדידים." />
+  <title>קונקטו | קהל ישיר. הפעלה חכמה. תוצאות מדידות.</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
-        <a class="brand" href="#top" aria-label="Connecto - דף הבית">
-          <img class="brand-logo brand-logo-header" src="Asset%201%20(3).png" alt="Connecto" width="480" height="180" />
-        </a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="קונקטו דף הבית">
+        <img class="brand-logo" src="Asset%201%20(3).png" alt="קונקטו" width="480" height="180" />
+      </a>
 
-        <nav class="nav" aria-label="ניווט ראשי">
-          <a href="#about">מה זה קונקטו</a>
-          <a href="#how-it-works">איך זה עובד</a>
-          <a href="#benefits">יתרונות</a>
-          <a href="#results">תוצאות</a>
-          <a href="#faq">שאלות נפוצות</a>
-        </nav>
+      <nav class="main-nav" aria-label="ניווט ראשי" data-nav>
+        <a href="#about">מה קונקטו עושה</a>
+        <a href="#how">איך זה עובד</a>
+        <a href="#benefits">יתרונות</a>
+        <a href="#results">תוצאות</a>
+        <a href="#faq">שאלות נפוצות</a>
+      </nav>
 
-        <div class="header-actions">
-          <a class="btn btn-secondary" href="#contact">לתיאום שיחת היכרות</a>
-          <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-panel" data-menu-button>
-            <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-          </button>
-        </div>
+      <div class="header-actions">
+        <a class="btn btn-gradient" href="#contact">לתיאום שיחת היכרות</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-btn>
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </div>
 
-      <div class="mobile-panel" id="mobile-panel" data-mobile-panel>
-        <div class="mobile-nav">
-          <a href="#about">מה זה קונקטו</a>
-          <a href="#how-it-works">איך זה עובד</a>
-          <a href="#benefits">יתרונות</a>
-          <a href="#results">תוצאות</a>
-          <a href="#faq">שאלות נפוצות</a>
-          <a class="btn btn-primary" href="#contact">לתיאום שיחת היכרות</a>
-        </div>
-      </div>
+    <div class="mobile-nav-wrap" id="mobile-nav" data-mobile-nav>
+      <nav class="mobile-nav" aria-label="ניווט מובייל">
+        <a href="#about">מה קונקטו עושה</a>
+        <a href="#how">איך זה עובד</a>
+        <a href="#benefits">יתרונות</a>
+        <a href="#results">תוצאות</a>
+        <a href="#faq">שאלות נפוצות</a>
+        <a class="btn btn-gradient" href="#contact">לתיאום שיחת היכרות</a>
+      </nav>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero" aria-label="הצגת קונקטו">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy reveal">
-            <span class="eyebrow">תשתית שיווק ישירה, מדידה ופעילה</span>
-            <h1>בונים לעסק קהל ישיר שמייצר תנועה, פניות ורכישות חוזרות.</h1>
-            <p>קונקטו מחברת בין העסק לקהל דרך קהילות, פורטל הצטרפות, נקודות מפגש, אוטומציה ודוחות שמראים מה באמת עובד.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">רוצה לראות איך זה עובד</a>
-              <a class="btn btn-secondary" href="#about">מה קונקטו עושה בפועל?</a>
-            </div>
-            <div class="hero-meta" aria-label="דגשים מהירים">
-              <span class="chip">קהל ישיר שאפשר להפעיל שוב ושוב</span>
-              <span class="chip">מדידה של כניסות, פניות והזמנות</span>
-            </div>
+  <main>
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="kicker">תשתית שיווק ישירה, מדידה ופעילה</span>
+          <h1>בונים לעסק קהל ישיר שמייצר תנועה, פניות ורכישות חוזרות.</h1>
+          <p>קונקטו מחברת בין העסק ללקוחות דרך קבוצות, נקודות מפגש ודוחות שמראים מה באמת עובד.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gradient" href="#contact">רוצה לראות איך זה עובד</a>
+            <a class="btn btn-outline" href="#contact">מה קונקטו עושה בפועל?</a>
           </div>
-          <div class="hero-points reveal" aria-label="דגשים מהירים נוספים">
-            <div class="hero-point card">
-              <span class="hero-point-title">פורטל הצטרפות ממותג</span>
-              <span class="hero-point-text">ממיר התעניינות לקהל שנשאר אצל העסק.</span>
+          <ul class="trust-chips" aria-label="יתרונות מהירים">
+            <li>קהל ישיר שאפשר להפעיל שוב ושוב</li>
+            <li>מדידה של כניסות, פניות והזמנות</li>
+            <li>פחות תלות באלגוריתמים</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="לוח מערכת קונקטו">
+          <div class="dashboard-card lift-card">
+            <div class="dash-head">
+              <strong><span class="status-dot" aria-hidden="true"></span>לוח הבקרה של קונקטו</strong>
+              <span class="live-pill">פעיל</span>
             </div>
-            <div class="hero-point card">
-              <span class="hero-point-title">WhatsApp ו-Telegram</span>
-              <span class="hero-point-text">מפיצים מסרים ישירות לקהלים רלוונטיים.</span>
+
+            <div class="portal-strip">
+              <span class="ui-tag"><span class="mini-ic" aria-hidden="true">⌁</span>פורטל הצטרפות</span>
+              <div class="touchpoints">
+                <span><b aria-hidden="true">◻</b>קוד QR</span>
+                <span><b aria-hidden="true">⊸</b>קישור</span>
+                <span><b aria-hidden="true">▭</b>באנר</span>
+              </div>
             </div>
-            <div class="hero-point card">
-              <span class="hero-point-title">דוחות ביצועים</span>
-              <span class="hero-point-text">מראים מה הביא קליקים, פניות והזמנות.</span>
+
+            <div class="group-lane">
+              <article class="group-card wa lift-card">
+                <h3><span class="mini-ic" aria-hidden="true">◌</span>קבוצת WhatsApp</h3>
+                <p>קבוצות לפי עניין</p>
+              </article>
+              <article class="group-card tg lift-card">
+                <h3><span class="mini-ic" aria-hidden="true">◉</span>קבוצת Telegram</h3>
+                <p>ערוצים ועדכונים</p>
+              </article>
+            </div>
+
+            <div class="floating-metrics" aria-hidden="true">
+              <span>+12% הקלקות</span>
+              <span>+18% חזרה</span>
+            </div>
+
+            <div class="metric-grid">
+              <article class="metric lift-card">
+                <span>מצטרפים חדשים</span>
+                <strong class="counter" data-target="4000" data-prefix="+" data-suffix="">+0</strong>
+              </article>
+              <article class="metric lift-card">
+                <span>כניסות לאתר</span>
+                <strong class="counter" data-target="3500" data-prefix="+" data-suffix="">+0</strong>
+              </article>
+              <article class="metric lift-card">
+                <span>הזמנות</span>
+                <strong class="counter" data-target="38">0</strong>
+              </article>
+              <article class="metric lift-card">
+                <span>הכנסה</span>
+                <strong class="counter" data-target="50000" data-prefix="₪">₪0</strong>
+              </article>
+            </div>
+
+            <div class="report-line">
+              <span><span class="mini-ic" aria-hidden="true">▣</span>דוח שבועי</span>
+              <div class="mini-bars" aria-hidden="true">
+                <i style="--h:34%"></i>
+                <i style="--h:52%"></i>
+                <i style="--h:68%"></i>
+                <i style="--h:46%"></i>
+                <i style="--h:82%"></i>
+              </div>
+              <span>תנועה חוזרת לאתר</span>
+            </div>
+
+            <div class="activity-line">
+              <span>עדכון נשלח לקבוצת מבצעים</span>
+              <span>18% חזרה לאתר השבוע</span>
+            </div>
+
+            <div class="traffic-line" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section section-tight" id="about">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">מה זה קונקטו</span>
           <h2>הבעיה היא לא שאין לכם לקוחות. הבעיה היא שקשה להגיע אליהם שוב.</h2>
-          <p>קונקטו בונה לעסק תשתית שמחזיקה קהל אמיתי, מפיצה אליו מסרים ישירות, ומראה מה מניע אותו לפעולה.</p>
+          <p>פוסטים נעלמים, מבצעים נבלעים, והקהל שכבר התעניין לא תמיד חוזר לפעולה.</p>
         </div>
-        <div class="pain-grid card-grid" data-grid="pain"></div>
+
+        <div class="flow-wrap reveal" aria-label="לפני ואחרי קונקטו">
+          <article class="flow-card muted">
+            <h3>היום</h3>
+            <div class="flow-row">
+              <span><i aria-hidden="true">◧</i>פוסט עולה</span>
+              <b>⟵</b>
+              <span><i aria-hidden="true">◌</i>נעלם בפיד</span>
+              <b>⟵</b>
+              <span><i aria-hidden="true">⊝</i>אין שליטה</span>
+              <b>⟵</b>
+              <span><i aria-hidden="true">◔</i>קשה למדוד</span>
+            </div>
+          </article>
+
+          <article class="flow-card strong">
+            <h3>עם קונקטו</h3>
+            <div class="flow-row">
+              <span><i aria-hidden="true">◎</i>קהל מצטרף</span>
+              <b>⟵</b>
+              <span><i aria-hidden="true">✉</i>מקבל עדכון</span>
+              <b>⟵</b>
+              <span><i aria-hidden="true">↗</i>חוזר לאתר / לשיחה</span>
+              <b>⟵</b>
+              <span><i aria-hidden="true">▣</i>נמדד בדוח</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section section-soft">
+    <section class="section section-soft" id="solution">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">התשובה</span>
           <h2>קונקטו הופכת את הקהל שלכם לנכס שיווקי ישיר, פעיל ונמדד.</h2>
-          <p>לא עוד מסר שנעלם ברעש. אלא מערכת שמחברת בין הצטרפות, תפעול, הפצה ומדידה.</p>
+          <p>במקום שכל קמפיין יתחיל מאפס, בונים תשתית שממשיכה לעבוד לאורך זמן.</p>
         </div>
-        <div class="solution-grid card-grid" data-grid="solution"></div>
-      </div>
-    </section>
 
-    <section class="section" id="how-it-works">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">איך זה עובד</span>
-          <h2>תהליך קצר וברור שמחבר בין אסטרטגיה, הצטרפות, הפעלה ומדידה.</h2>
-        </div>
-        <div class="steps-layout">
-          <div class="steps-panel reveal" data-grid="steps"></div>
-          <div class="info-card reveal">
-            <span class="chip">תוצאה עסקית</span>
-            <h3>במקום להתחיל כל קמפיין מאפס, בונים נכס שיווקי שמתפתח עם העסק.</h3>
-            <p>המערכת מאפשרת לחזור לאותו קהל, למדוד תגובה, ולשפר נקודות מפגש ותוכן לאורך זמן.</p>
-            <ul>
-              <li>פחות תלות בכל פרסום מחדש</li>
-              <li>יותר שליטה על קהל שכבר התעניין</li>
-              <li>יותר בהירות לגבי מה מייצר פניות והזמנות</li>
-            </ul>
+        <div class="system-map reveal" aria-label="מפת מערכת קונקטו">
+          <div class="system-hub lift-card">
+            <span class="hub-icon">◉</span>
+            <strong>מערכת קונקטו</strong>
+            <p>קהל, תוכן, תנועה ותוצאה במקום אחד</p>
           </div>
+
+          <article class="node node-1 lift-card">
+            <span class="node-icon">◧</span>
+            <h3>פורטל הצטרפות</h3>
+            <p>כניסה ברורה לקהל.</p>
+          </article>
+
+          <article class="node node-2 lift-card">
+            <span class="node-icon">◎</span>
+            <h3>קבוצות לפי עניין</h3>
+            <p>מסר מדויק לכל קהל.</p>
+          </article>
+
+          <article class="node node-3 lift-card">
+            <span class="node-icon">◫</span>
+            <h3>נקודות מפגש</h3>
+            <p>אתר, סושיאל ו-QR.</p>
+          </article>
+
+          <article class="node node-4 lift-card">
+            <span class="node-icon">✉</span>
+            <h3>הפצת עדכונים</h3>
+            <p>תוכן שמניע פעולה.</p>
+          </article>
+
+          <article class="node node-5 lift-card">
+            <span class="node-icon">↗</span>
+            <h3>תנועה לאתר ולעסק</h3>
+            <p>חזרה לערוצים שלכם.</p>
+          </article>
+
+          <article class="node node-6 lift-card">
+            <span class="node-icon">▣</span>
+            <h3>דוחות ותובנות</h3>
+            <p>שיפור מתמשך מבוסס נתונים.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="benefits">
+    <section class="section" id="how">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">יתרונות</span>
+          <h2>תהליך קצר וברור שמחבר בין אסטרטגיה, הצטרפות, הפעלה ומדידה.</h2>
+          <p>כל שלב נבנה כדי להפוך קהל קיים לערוץ שמייצר פעולה מדידה.</p>
+        </div>
+
+        <div class="timeline reveal" aria-label="תהליך עבודה">
+          <article class="step lift-card">
+            <span class="step-no">1</span>
+            <h3>מאפיינים</h3>
+            <p>עסק, קהל, תחומי עניין ומטרות.</p>
+          </article>
+          <article class="step lift-card">
+            <span class="step-no">2</span>
+            <h3>מקימים</h3>
+            <p>פורטל, קבוצות, קוד QR ונקודות מפגש.</p>
+          </article>
+          <article class="step lift-card">
+            <span class="step-no">3</span>
+            <h3>מפעילים</h3>
+            <p>מבצעים, עדכונים ותוכן לקהל הנכון.</p>
+          </article>
+          <article class="step lift-card">
+            <span class="step-no">4</span>
+            <h3>מודדים</h3>
+            <p>כניסות, קליקים, פניות והזמנות.</p>
+          </article>
+
+          <aside class="timeline-result lift-card">
+            <span>התוצאה</span>
+            <strong>קהל שאפשר להפעיל שוב ושוב.</strong>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-contrast" id="benefits">
+      <div class="container">
+        <div class="section-head reveal">
           <h2>מה העסק מרוויח מקונקטו?</h2>
+          <p>ארבעה יתרונות עסקיים ברורים.</p>
         </div>
-        <div class="benefit-grid card-grid" data-grid="benefits"></div>
+
+        <div class="benefits-grid reveal">
+          <article class="benefit-card lift-card">
+            <span class="benefit-icon">◉</span>
+            <h3>קהל שנשאר אצלכם</h3>
+            <p>לא רק חשיפה רגעית, אלא קהל שאפשר להחזיר לפעולה.</p>
+          </article>
+          <article class="benefit-card lift-card">
+            <span class="benefit-icon">⦿</span>
+            <h3>פחות תלות באלגוריתמים</h3>
+            <p>המסר מגיע לערוץ ישיר ולא נעלם בפיד.</p>
+          </article>
+          <article class="benefit-card lift-card">
+            <span class="benefit-icon">↻</span>
+            <h3>הפצה לפי תחומי עניין</h3>
+            <p>לקוחות מקבלים עדכונים שרלוונטיים למה שמעניין אותם.</p>
+          </article>
+          <article class="benefit-card lift-card">
+            <span class="benefit-icon">▣</span>
+            <h3>דוחות שמראים תוצאה</h3>
+            <p>רואים מה הביא כניסות, פניות והזמנות.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section class="section" id="included">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">מה כלול במערכת ובתהליך</span>
           <h2>מה כלול במערכת ובתהליך?</h2>
-          <p>היכולות מוצגות כאן בשפה עסקית, כדי שיהיה ברור איך כל רכיב תורם לתוצאה.</p>
+          <p>כל רכיב ברור, מדיד ומחובר לתוצאה עסקית.</p>
         </div>
-        <div class="feature-grid card-grid" data-grid="features"></div>
+
+        <div class="modules-grid reveal">
+          <article class="module-card lift-card">
+            <span class="module-no">01</span>
+            <h3>פורטל הצטרפות ממותג</h3>
+            <p>עמוד כניסה שממיר עניין להצטרפות.</p>
+            <small>כפתור הצטרפות | בחירת קבוצה</small>
+          </article>
+          <article class="module-card lift-card">
+            <span class="module-no">02</span>
+            <h3>קבוצות WhatsApp ו־Telegram</h3>
+            <p>ערוצים ישירים לקהלים שונים.</p>
+            <small>קבוצה פעילה | ערוץ עדכונים</small>
+          </article>
+          <article class="module-card lift-card">
+            <span class="module-no">03</span>
+            <h3>קטגוריות לפי תחומי עניין</h3>
+            <p>חלוקה חכמה לפי מה שמעניין לקוחות.</p>
+            <small>תחומי עניין | סגמנטים</small>
+          </article>
+          <article class="module-card lift-card">
+            <span class="module-no">04</span>
+            <h3>נקודות מפגש באתר, בסושיאל וב־QR</h3>
+            <p>חיבור כל מגע לקהל ישיר.</p>
+            <small>באנר | קישור | קוד QR</small>
+          </article>
+          <article class="module-card lift-card">
+            <span class="module-no">05</span>
+            <h3>הודעות ותכנים להפצה</h3>
+            <p>מסרים קצרים שמחזירים לפעולה.</p>
+            <small>עדכון | מבצע | תוכן</small>
+          </article>
+          <article class="module-card lift-card">
+            <span class="module-no">06</span>
+            <h3>דוחות ביצועים שבועיים</h3>
+            <p>תמונה ברורה של מה עבד.</p>
+            <small>קליקים | פניות | הזמנות</small>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="results">
+    <section class="section results-section" id="results">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">תוצאות</span>
-          <h2>חודש ראשון עם connecto</h2>
-          <p>תוצאות אמיתיות מלקוחות פעילים</p>
+          <span class="kicker kicker-on-dark">תוצאות</span>
+          <h2>חודש ראשון עם קונקטו</h2>
+          <p>תוצאות אמיתיות מלקוחות פעילים, לא רק פעילות שיווקית על הנייר.</p>
         </div>
-        <div class="results-grid" data-grid="results"></div>
-        <p class="note reveal">זה לא קמפיין חד פעמי, זה נכס שעובד לאורך זמן.</p>
+
+        <div class="results-grid reveal">
+          <article class="result-card lift-card">
+            <span class="case-label">קייס לקוח 1</span>
+            <h3>החזר חזק על השקעה</h3>
+            <div class="roi-line">
+              <strong>₪1,500</strong>
+              <b>→</b>
+              <strong>₪50,000</strong>
+            </div>
+            <div class="roi-meta">
+              <span>השקעה</span>
+              <span>הכנסה</span>
+            </div>
+            <p>X33 ROI</p>
+            <small>קהל קיים שהופעל נכון יצר הכנסה מדידה.</small>
+          </article>
+
+          <article class="result-card lift-card">
+            <span class="case-label">קייס לקוח 2</span>
+            <h3>גיוס קהל והחזרה לאתר</h3>
+            <ul>
+              <li><strong>+4,000</strong><span>מצטרפים</span></li>
+              <li><strong>+3,500</strong><span>כניסות לאתר</span></li>
+              <li><strong>38</strong><span>הזמנות</span></li>
+            </ul>
+            <small>קהל שעבר מקבוצות לפעולה באתר.</small>
+          </article>
+
+          <article class="result-card lift-card">
+            <span class="case-label">קייס לקוח 3</span>
+            <h3>אפקט של הודעה אחת</h3>
+            <div class="single-metric">
+              <strong>₪10,000</strong>
+              <span>מכירות מהודעה אחת</span>
+            </div>
+            <small>מסר ממוקד לקהל שכבר מכיר את העסק.</small>
+          </article>
+        </div>
+
+        <p class="results-note reveal">זה לא קמפיין חד פעמי. זה נכס שיווקי שעובד לאורך זמן.</p>
       </div>
     </section>
 
-    <section class="section section-soft">
+    <section class="section" id="audience">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">למי זה מתאים</span>
           <h2>למי קונקטו מתאימה?</h2>
+          <p>בעיקר לעסקים שכבר יש להם קהל, לקוחות, עוקבים או תנועה, ורוצים להפוך אותם לערוץ ישיר.</p>
         </div>
-        <div class="audience-grid card-grid" data-grid="audience"></div>
+
+        <div class="audience-grid reveal">
+          <article class="audience-card lift-card"><span>◫</span><p>חנויות ורשתות עם מבצעים ומוצרים מתחלפים</p></article>
+          <article class="audience-card lift-card"><span>⌖</span><p>עסקים מקומיים עם קהל חוזר</p></article>
+          <article class="audience-card lift-card"><span>▤</span><p>אתרי Ecommerce שרוצים להחזיר לקוחות לרכישה</p></article>
+          <article class="audience-card lift-card"><span>◎</span><p>עסקים עם עוקבים אבל בלי קהילה ישירה</p></article>
+          <article class="audience-card lift-card"><span>◍</span><p>מותגים שרוצים להפיץ לפי תחומי עניין</p></article>
+          <article class="audience-card lift-card"><span>▣</span><p>עסקים שרוצים למדוד מה באמת מניע לפעולה</p></article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="comparison">
+    <section class="section section-soft" id="comparison">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">השוואה</span>
           <h2>למה זה שונה מפרסום רגיל?</h2>
+          <p>בפרסום רגיל קונים חשיפה. בקונקטו בונים נכס שאפשר להפעיל שוב ושוב.</p>
         </div>
-        <div class="comparison reveal">
-          <div class="comparison-column">
+
+        <div class="comparison-grid reveal">
+          <article class="compare-card compare-weak">
             <h3>פרסום רגיל</h3>
             <ul>
               <li>משלמים שוב ושוב כדי להגיע לקהל</li>
-              <li>תלויים באלגוריתם</li>
-              <li>קשה לשמור קהל לאורך זמן</li>
+              <li>תלויים באלגוריתמים</li>
               <li>המסר נעלם מהר</li>
+              <li>קשה לשמר קהל לאורך זמן</li>
               <li>לא תמיד ברור מה יצר פעולה</li>
             </ul>
-          </div>
-          <div class="comparison-column recommended">
-            <h3>קונקטו</h3>
+          </article>
+
+          <article class="compare-card compare-strong">
+            <h3>קונקטו: קהל שנשאר אצלכם</h3>
             <ul>
               <li>בונים קהל שנשאר אצל העסק</li>
               <li>מפיצים מסרים ישירות</li>
@@ -192,121 +440,162 @@
               <li>מחזירים תנועה לאתר ולעסק</li>
               <li>מודדים כניסות, פניות והזמנות</li>
             </ul>
-          </div>
+          </article>
         </div>
+        <p class="comparison-note reveal">ההבדל פשוט: לא רק חשיפה, אלא קהל שאפשר להחזיר לפעולה.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <div class="cta-block reveal">
-          <div class="cta-inner">
-            <span class="eyebrow">הצעד הבא</span>
-            <h2>רוצים לבנות לעסק שלכם קהל שאפשר להפעיל ולמדוד?</h2>
-            <p>נבדוק יחד אילו קבוצות, נקודות מפגש ותכנים יכולים להפוך את הקהל הקיים שלכם לערוץ שיווקי ישיר.</p>
-            <a class="btn btn-ghost" href="#contact">לתיאום שיחת היכרות</a>
-          </div>
+          <h2>רוצים לבנות לעסק שלכם קהל שאפשר להפעיל ולמדוד?</h2>
+          <p>נבדוק יחד אילו קבוצות, נקודות מפגש ותכנים יכולים להפוך את הקהל הקיים שלכם לערוץ שיווקי ישיר.</p>
+          <ul>
+            <li>נבין את הקהל</li>
+            <li>נבנה נקודות מפגש</li>
+            <li>נמדוד תוצאות</li>
+          </ul>
+          <a class="btn btn-light" href="#contact">לתיאום שיחת היכרות ↗</a>
         </div>
       </div>
     </section>
 
     <section class="section" id="faq">
-      <div class="container">
+      <div class="container faq-wrap">
         <div class="section-head reveal">
-          <span class="eyebrow">שאלות נפוצות</span>
           <h2>שאלות נפוצות</h2>
         </div>
-        <div class="faq-list" data-grid="faq"></div>
+
+        <div class="faq-list reveal">
+          <article class="faq-item open">
+            <button class="faq-q" type="button" aria-expanded="true" aria-controls="faq-a-1">
+              האם קונקטו היא רק מערכת לפתיחת קבוצות?
+              <span>+</span>
+            </button>
+            <div class="faq-a" id="faq-a-1">
+              <p>לא. הקבוצות הן רק חלק מהתשתית. קונקטו כוללת פורטל הצטרפות, נקודות מפגש, הפצת תוכן, מדידה ודוחות.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-2">
+              למה לא מספיק לפרסם בפייסבוק או באינסטגרם?
+              <span>+</span>
+            </button>
+            <div class="faq-a" id="faq-a-2">
+              <p>רשתות חברתיות חשובות, אבל אין שליטה מלאה במי רואה את התוכן. קונקטו עוזרת להעביר קהל לערוץ ישיר.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-3">
+              האם זה מתאים לעסק עם קבוצה אחת בלבד?
+              <span>+</span>
+            </button>
+            <div class="faq-a" id="faq-a-3">
+              <p>כן. אפשר להתחיל מקבוצה אחת ובהמשך לפתוח קטגוריות לפי תחומי עניין, מוצרים, קהלים או אזורים.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-4">
+              מה אפשר למדוד?
+              <span>+</span>
+            </button>
+            <div class="faq-a" id="faq-a-4">
+              <p>כניסות לפורטל, לחיצות, הצטרפות לקבוצות, תנועה חוזרת לאתר, פניות, שיחות, הודעות והזמנות.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-5">
+              האם קונקטו כוללת גם עזרה שיווקית?
+              <span>+</span>
+            </button>
+            <div class="faq-a" id="faq-a-5">
+              <p>כן. מעבר למערכת, העבודה כוללת חשיבה על נקודות מפגש, מסרים, תכנים ודוחות.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="section section-soft" id="contact">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">יצירת קשר</span>
-          <h2>רוצים לראות אם קונקטו מתאימה לעסק שלכם?</h2>
+      <div class="container contact-grid">
+        <div class="section-head reveal contact-head">
+          <h2>רוצים לבדוק אם קונקטו מתאימה לעסק שלכם?</h2>
           <p>השאירו פרטים ונחזור עם כיוון ראשוני לתשתית, לקהלים ולנקודות המפגש הנכונות.</p>
         </div>
 
-        <div class="contact-wrap">
-          <aside class="contact-card reveal">
-            <span class="chip">מה נבדוק בשיחה</span>
-            <h3>התאמה לעסק, לקהל ולמטרות שלכם</h3>
-            <ul>
-              <li>אילו קהלים צריך לחבר לתשתית הישירה</li>
-              <li>איפה נכון לפגוש לקוחות ולהציע הצטרפות</li>
-              <li>איך מודדים קליקים, פניות, תנועה והזמנות</li>
-            </ul>
-          </aside>
+        <aside class="contact-side lift-card reveal">
+          <h3>מה תקבלו בשיחה?</h3>
+          <ul>
+            <li><span aria-hidden="true">✓</span>אילו קהלים כדאי לחבר לתשתית ישירה</li>
+            <li><span aria-hidden="true">✓</span>איפה נכון להציב נקודות הצטרפות</li>
+            <li><span aria-hidden="true">✓</span>איך למדוד כניסות, פניות והזמנות</li>
+            <li><span aria-hidden="true">✓</span>האם קונקטו מתאימה למבנה העסק שלכם</li>
+          </ul>
+        </aside>
 
-          <div class="form-card reveal">
-            <form id="lead-form" action="#" novalidate>
-              <div class="form-grid">
-                <div class="form-field">
-                  <label for="full-name">שם מלא</label>
-                  <input id="full-name" name="fullName" type="text" autocomplete="name" required />
-                </div>
-                <div class="form-field">
-                  <label for="business-name">שם העסק</label>
-                  <input id="business-name" name="businessName" type="text" autocomplete="organization" required />
-                </div>
-                <div class="form-field">
-                  <label for="phone">טלפון</label>
-                  <input id="phone" name="phone" type="tel" autocomplete="tel" required />
-                </div>
-                <div class="form-field">
-                  <label for="website">אתר / עמוד עסקי</label>
-                  <input id="website" name="website" type="url" placeholder="https://" />
-                </div>
-                <div class="form-field full">
-                  <label for="message">מה חשוב לנו לדעת?</label>
-                  <textarea id="message" name="message" placeholder="אפשר לכתוב כמה מילים על העסק, הקהל או המטרה"></textarea>
-                </div>
-              </div>
-
-              <div class="form-actions">
-                <button class="btn btn-primary" type="submit">שלחו לי פרטים</button>
-                <span class="form-message" id="form-message" role="status" aria-live="polite">הפרטים נשלחו בהצלחה. נחזור אליכם בקרוב.</span>
-              </div>
-            </form>
+        <form class="contact-form lift-card reveal" id="lead-form" action="#" novalidate>
+          <div class="field">
+            <label for="full-name">שם מלא</label>
+            <input id="full-name" name="fullName" type="text" autocomplete="name" required />
           </div>
-        </div>
+
+          <div class="field">
+            <label for="business-name">שם העסק</label>
+            <input id="business-name" name="businessName" type="text" autocomplete="organization" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">טלפון</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+          </div>
+
+          <div class="field">
+            <label for="website">אתר / עמוד עסקי</label>
+            <input id="website" name="website" type="url" placeholder="https://" />
+          </div>
+
+          <div class="field field-full">
+            <label for="details">מה חשוב לנו לדעת?</label>
+            <textarea id="details" name="details" rows="4" placeholder="מה מטרת הקהל הישיר שלכם?"></textarea>
+          </div>
+
+          <p class="form-note">בדיקה ראשונית ללא התחייבות</p>
+          <button class="btn btn-gradient" type="submit">בדקו התאמה לעסק שלי</button>
+          <p class="form-success" id="form-success" role="status" aria-live="polite">תודה, קיבלנו את הפרטים ונחזור אליכם בהקדם.</p>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="#top" aria-label="Connecto - דף הבית">
-            <img class="brand-logo brand-logo-footer" src="Asset%201%20(3).png" alt="Connecto" width="480" height="180" loading="lazy" />
-          </a>
-        </div>
-
-        <div>
-          <h3>ניווט</h3>
-          <ul>
-            <li><a href="#about">מה זה קונקטו</a></li>
-            <li><a href="#how-it-works">איך זה עובד</a></li>
-            <li><a href="#benefits">יתרונות</a></li>
-            <li><a href="#results">תוצאות</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>יצירת קשר</h3>
-          <ul>
-            <li><a href="#contact">לתיאום שיחת היכרות</a></li>
-            <li><a href="mailto:hello@connecto.example">hello@connecto.example</a></li>
-            <li><a href="tel:+972000000000">+972-00-000-0000</a></li>
-          </ul>
-        </div>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img class="brand-logo footer-logo" src="Asset%201%20(3).png" alt="קונקטו" width="480" height="180" loading="lazy" />
+        <p>קשר חכם. תוצאות מדויקות.</p>
       </div>
-      <div class="copyright">© <span id="year"></span> Connecto. כל הזכויות שמורות.</div>
+
+      <nav class="footer-nav" aria-label="ניווט תחתון">
+        <a href="#about">מה קונקטו עושה</a>
+        <a href="#how">איך זה עובד</a>
+        <a href="#results">תוצאות</a>
+        <a href="#contact">יצירת קשר</a>
+      </nav>
+
+      <div class="footer-contact">
+        <p>יצירת קשר</p>
+        <span>אימייל: להשלמה</span>
+        <span>טלפון: להשלמה</span>
+      </div>
     </div>
+
+    <div class="container footer-bottom">© <span id="year"></span> קונקטו. כל הזכויות שמורות.</div>
   </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
