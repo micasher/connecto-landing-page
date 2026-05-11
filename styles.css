@@ -988,6 +988,20 @@ button, input, textarea { font: inherit; }
   border: 0;
 }
 
+.how-dashboard-frame {
+  width: min(100%, 1120px);
+  margin: 12px auto 0;
+}
+
+.how-dashboard-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  border: 1px solid #d7e8ea;
+  box-shadow: 0 22px 44px rgba(12, 27, 45, 0.12), 0 2px 8px rgba(12, 27, 45, 0.08);
+}
+
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1636,6 +1650,14 @@ button, input, textarea { font: inherit; }
   }
 
   .how-video-canvas {
+    border-radius: 14px;
+  }
+
+  .how-dashboard-frame {
+    margin-top: 10px;
+  }
+
+  .how-dashboard-frame img {
     border-radius: 14px;
   }
 }
