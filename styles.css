@@ -1709,6 +1709,14 @@ button, input, textarea { font: inherit; }
   /* width is set dynamically by JS */
 }
 
+.live-examples-section .carousel-track {
+  align-items: flex-start;
+}
+
+.live-examples-section .carousel-item {
+  display: block;
+}
+
 .example-card {
   background: #ffffff;
   border-radius: 16px;
