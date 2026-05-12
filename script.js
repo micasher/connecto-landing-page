@@ -132,11 +132,11 @@ function setYear() {
   year.textContent = String(new Date().getFullYear());
 }
 
-function setupCarousel() {
-  const track = document.querySelector("[data-carousel-track]");
-  const container = document.querySelector(".carousel-container");
-  const prevBtn = document.querySelector("[data-carousel-prev]");
-  const nextBtn = document.querySelector("[data-carousel-next]");
+function setupCarousel(wrapper) {
+  const track = wrapper.querySelector("[data-carousel-track]");
+  const container = wrapper.querySelector(".carousel-container");
+  const prevBtn = wrapper.querySelector("[data-carousel-prev]");
+  const nextBtn = wrapper.querySelector("[data-carousel-next]");
 
   if (!track || !container || !prevBtn || !nextBtn) return;
 
@@ -144,20 +144,15 @@ function setupCarousel() {
   const totalItems = items.length;
   const itemsPerRow = 3;
   const gap = 24;
-  let currentIndex = 0; // index of the leftmost visible card
+  let currentIndex = 0;
 
   function getItemWidth() {
     return (container.offsetWidth - gap * (itemsPerRow - 1)) / itemsPerRow;
   }
 
-  function applyItemWidths() {
+  function updateCarousel() {
     const w = getItemWidth();
     items.forEach((item) => { item.style.width = w + "px"; });
-  }
-
-  function updateCarousel() {
-    applyItemWidths();
-    const w = getItemWidth();
     const offset = currentIndex * (w + gap);
     track.style.transform = `translateX(${offset}px)`;
 
@@ -182,7 +177,6 @@ function setupCarousel() {
   });
 
   window.addEventListener("resize", updateCarousel);
-
   updateCarousel();
 }
 
@@ -193,4 +187,4 @@ setupSmoothScroll();
 setupFormMessage();
 animateCounters();
 setupReveal();
-setupCarousel();
+document.querySelectorAll(".carousel-wrapper").forEach(setupCarousel);
