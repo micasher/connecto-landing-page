@@ -1093,10 +1093,9 @@ button, input, textarea { font: inherit; }
 .compare-card li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: row;
   gap: 10px;
-  padding: 10px 12px;
-  border-radius: 12px;
+  padding: 6px 0;
   font-size: 15px;
   font-weight: 700;
 }
@@ -1106,13 +1105,13 @@ button, input, textarea { font: inherit; }
 }
 .compare-weak h3 { color: #66717c; }
 .compare-weak li {
-  background: #fff;
   color: #6b7280;
 }
-.compare-weak li::after {
+.compare-weak li::before {
   content: "✕";
   color: var(--c-danger);
   font-size: 20px;
+  flex-shrink: 0;
 }
 .compare-strong {
   border: 1px solid #8fd8d8;
@@ -1121,14 +1120,13 @@ button, input, textarea { font: inherit; }
 }
 .compare-strong h3 { color: #0f7f81; }
 .compare-strong li {
-  background: #fff;
   color: #325153;
-  border: 1px solid #d2eaed;
 }
-.compare-strong li::after {
+.compare-strong li::before {
   content: "✓";
   color: var(--c-success);
   font-size: 20px;
+  flex-shrink: 0;
 }
 .comparison-note {
   margin: 14px 0 0;
