@@ -132,6 +132,60 @@ function setYear() {
   year.textContent = String(new Date().getFullYear());
 }
 
+function setupCarousel() {
+  const track = document.querySelector("[data-carousel-track]");
+  const container = document.querySelector(".carousel-container");
+  const prevBtn = document.querySelector("[data-carousel-prev]");
+  const nextBtn = document.querySelector("[data-carousel-next]");
+
+  if (!track || !container || !prevBtn || !nextBtn) return;
+
+  const items = Array.from(track.querySelectorAll(".carousel-item"));
+  const totalItems = items.length;
+  const itemsPerRow = 3;
+  const gap = 24;
+  let currentIndex = 0; // index of the leftmost visible card
+
+  function getItemWidth() {
+    return (container.offsetWidth - gap * (itemsPerRow - 1)) / itemsPerRow;
+  }
+
+  function applyItemWidths() {
+    const w = getItemWidth();
+    items.forEach((item) => { item.style.width = w + "px"; });
+  }
+
+  function updateCarousel() {
+    applyItemWidths();
+    const w = getItemWidth();
+    const offset = currentIndex * (w + gap);
+    track.style.transform = `translateX(${offset}px)`;
+
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= totalItems - itemsPerRow;
+    prevBtn.style.opacity = prevBtn.disabled ? "0.35" : "1";
+    nextBtn.style.opacity = nextBtn.disabled ? "0.35" : "1";
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < totalItems - itemsPerRow) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  window.addEventListener("resize", updateCarousel);
+
+  updateCarousel();
+}
+
 setYear();
 setupMobileMenu();
 setupFaqAccordion();
@@ -139,3 +193,4 @@ setupSmoothScroll();
 setupFormMessage();
 animateCounters();
 setupReveal();
+setupCarousel();
