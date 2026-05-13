@@ -607,43 +607,48 @@
         </div>
 
         <aside class="contact-side lift-card reveal">
-          <h3>מה תקבלו בשיחה?</h3>
+          <img class="contact-illustration" src="media/contactusimage.png" alt="איור התאמת קהל ותוצאות" loading="lazy" />
           <ul>
-            <li><span aria-hidden="true">✓</span>אילו קהלים כדאי לחבר לתשתית ישירה</li>
-            <li><span aria-hidden="true">✓</span>איפה נכון להציב נקודות הצטרפות</li>
-            <li><span aria-hidden="true">✓</span>איך למדוד כניסות, פניות והזמנות</li>
-            <li><span aria-hidden="true">✓</span>האם קונקטו מתאימה למבנה העסק שלכם</li>
+            <li><span aria-hidden="true">✓</span>נבדוק איפה יש לכם קהל קיים שאפשר להפעיל</li>
+            <li><span aria-hidden="true">✓</span>נראה איך אפשר לאסוף אותו לקבוצות וערוצים</li>
+            <li><span aria-hidden="true">✓</span>נסביר אילו נתונים ותוצאות אפשר למדוד כבר מההתחלה</li>
           </ul>
+          <div class="contact-side-summary">
+            <span class="summary-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+            </span>
+            <span class="summary-text">פשוט, ברור ומותאם ל<span class="summary-underline">עסק שלכם</span>.</span>
+          </div>
         </aside>
 
         <form class="contact-form lift-card reveal" id="lead-form" action="#" novalidate>
           <div class="field">
             <label for="full-name">שם מלא</label>
-            <input id="full-name" name="fullName" type="text" autocomplete="name" required />
+            <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="שם מלא" required />
           </div>
 
           <div class="field">
             <label for="business-name">שם העסק</label>
-            <input id="business-name" name="businessName" type="text" autocomplete="organization" required />
+            <input id="business-name" name="businessName" type="text" autocomplete="organization" placeholder="שם העסק" required />
           </div>
 
           <div class="field">
             <label for="phone">טלפון</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="טלפון" dir="rtl" required />
           </div>
 
           <div class="field">
-            <label for="website">אתר / עמוד עסקי</label>
-            <input id="website" name="website" type="url" placeholder="https://" />
+            <label for="email">מייל</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="מייל" />
           </div>
 
           <div class="field field-full">
-            <label for="details">מה חשוב לנו לדעת?</label>
-            <textarea id="details" name="details" rows="4" placeholder="מה מטרת הקהל הישיר שלכם?"></textarea>
+            <label for="details">מה מעניין אתכם?</label>
+            <textarea id="details" name="details" rows="3" placeholder="מה מעניין אתכם?"></textarea>
           </div>
 
-          <p class="form-note">בדיקה ראשונית ללא התחייבות</p>
-          <button class="btn btn-gradient" type="submit">בדקו התאמה לעסק שלי</button>
+          <button class="btn btn-gradient" type="submit">השאירו פרטים ונחזור אליכם</button>
+          <p class="form-note">ללא התחייבות • שיחה קצרה • התאמה אישית לעסק שלכם</p>
           <p class="form-success" id="form-success" role="status" aria-live="polite">תודה, קיבלנו את הפרטים ונחזור אליכם בהקדם.</p>
         </form>
       </div>
