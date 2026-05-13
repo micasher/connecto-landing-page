@@ -324,6 +324,7 @@ p {
   text-align: center;
   position: relative;
   border-radius: 12px;
+  border: 1px solid transparent;
   transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, color 0.22s ease;
 }
 .cat-item + .cat-item::before {
@@ -344,6 +345,7 @@ p {
 .cat-item:hover {
   transform: translateY(-3px);
   background: #ffffff;
+  border-color: #19c6c3;
   box-shadow: 0 10px 24px rgba(31, 42, 55, 0.12);
   color: #243444;
 }
@@ -753,8 +755,8 @@ p {
 
 .pain-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 34px rgba(31, 42, 55, 0.14);
-  border-color: #dbe5ef;
+  box-shadow: 0 8px 24px rgba(25, 198, 195, 0.12);
+  border-color: #19c6c3;
 }
 
 .pain-icon-img {
@@ -899,6 +901,13 @@ p {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: all 0.22s ease;
+}
+
+.step-card:hover {
+  border-color: #19c6c3;
+  box-shadow: 0 8px 24px rgba(25, 198, 195, 0.12);
+  transform: translateY(-3px);
 }
 
 .step-card img {
@@ -1092,6 +1101,13 @@ p {
   border-radius: 18px;
   border: 1px solid #e6f3f2;
   background: #fff;
+  transition: all 0.22s ease;
+}
+
+.result-metric:hover {
+  border-color: #19c6c3;
+  box-shadow: 0 8px 24px rgba(25, 198, 195, 0.12);
+  transform: translateY(-3px);
 }
 .result-metric-icon {
   display: flex;
@@ -1214,6 +1230,18 @@ p {
   text-align: center;
   gap: 14px;
   box-shadow: 0 4px 18px rgba(25, 198, 195, 0.08);
+  transition: all 0.22s ease;
+}
+
+#reviews .carousel-container {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.review-card:hover {
+  border-color: #19c6c3;
+  box-shadow: 0 8px 24px rgba(25, 198, 195, 0.12);
+  transform: translateY(-3px);
 }
 .review-logo {
   height: 100px;
@@ -2030,6 +2058,11 @@ p {
   font-size: var(--fs-subtitle);
 }
 
+.live-examples-section .carousel-container {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .clients-carousel-section {
   background: #f6f8fa;
 }
@@ -2052,6 +2085,11 @@ p {
   margin-bottom: 0;
 }
 
+.clients-carousel-section .carousel-container {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .clients-carousel-section .carousel-track {
   align-items: center;
 }
@@ -2071,6 +2109,13 @@ p {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(25, 36, 58, 0.06);
   padding: 12px;
+  transition: all 0.22s ease;
+}
+
+.client-logo-card:hover {
+  border-color: #19c6c3;
+  box-shadow: 0 8px 24px rgba(25, 198, 195, 0.12);
+  transform: translateY(-3px);
 }
 
 .client-logo-card img {
