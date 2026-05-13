@@ -656,26 +656,57 @@
   </main>
 
   <footer class="site-footer">
+    <div class="footer-top-divider"><span class="footer-dot"></span></div>
     <div class="container footer-grid">
+
+      <!-- עמודה 1: לוגו + פרטי קשר -->
       <div class="footer-brand">
         <img class="brand-logo footer-logo" src="media/logo.png" alt="קונקטו" width="480" height="180" loading="lazy" />
-        <p>קשר חכם. תוצאות מדויקות.</p>
+        <div class="footer-brand-divider"><span class="footer-brand-dot"></span></div>
+        <div class="footer-contact-info">
+          <div class="footer-contact-row">
+            <span class="footer-icon-circle" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            </span>
+            <span class="footer-contact-label">טלפון:</span>
+            <a href="tel:0555571040" class="footer-contact-value" dir="ltr">055-557-1040</a>
+          </div>
+          <div class="footer-contact-row">
+            <span class="footer-icon-circle" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </span>
+            <span class="footer-contact-label">מייל:</span>
+            <a href="mailto:office@connecto.site" class="footer-contact-value">office@connecto.site</a>
+          </div>
+        </div>
       </div>
 
+      <!-- עמודה 2: ניווט -->
       <nav class="footer-nav" aria-label="ניווט תחתון">
-        <a href="#about">מה קונקטו עושה</a>
-        <a href="#how">איך זה עובד</a>
-        <a href="#results">תוצאות</a>
-        <a href="#contact">יצירת קשר</a>
+        <h3 class="footer-col-heading footer-col-heading-no-line">ניווט</h3>
+        <a href="#about"><span class="footer-arrow" aria-hidden="true">&#8250;</span>אודות</a>
+        <a href="#how"><span class="footer-arrow" aria-hidden="true">&#8250;</span>איך זה עובד</a>
+        <a href="#results"><span class="footer-arrow" aria-hidden="true">&#8250;</span>תוצאות</a>
+        <a href="#faq"><span class="footer-arrow" aria-hidden="true">&#8250;</span>שאלות נפוצות</a>
+        <a href="#contact"><span class="footer-arrow" aria-hidden="true">&#8250;</span>צור קשר</a>
       </nav>
 
-      <div class="footer-contact">
-        <p>יצירת קשר</p>
-        <span>פרטי קשר יעודכנו כאן</span>
+      <!-- עמודה 3: מידע משפטי -->
+      <div class="footer-legal">
+        <h3 class="footer-col-heading">מידע משפטי</h3>
+        <a href="/privacy"><span class="footer-arrow" aria-hidden="true">&#8250;</span>מדיניות פרטיות</a>
+        <a href="/terms"><span class="footer-arrow" aria-hidden="true">&#8250;</span>תנאי שימוש</a>
       </div>
+
     </div>
 
-    <div class="container footer-bottom">© <span id="year"></span> קונקטו. כל הזכויות שמורות.</div>
+    <div class="container footer-bottom">
+      כל הזכויות שמורות ל-Connecto
+      <svg class="footer-shield" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <path d="M9 12.5l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
   </footer>
 
   <script src="script.js"></script>

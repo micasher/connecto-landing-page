@@ -1566,45 +1566,172 @@ button, input, textarea { font: inherit; }
 }
 
 .site-footer {
-  padding: 32px 0 20px;
+  padding: 14px 0 20px;
   background: #f2fbfc;
   border-top: 1px solid #d9ecef;
 }
+.footer-top-divider {
+  position: relative;
+  border-top: 1px solid #d9ecef;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.footer-dot {
+  display: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1ea94d;
+  position: relative;
+  top: -4px;
+}
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 14px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
   align-items: start;
 }
-.footer-logo { max-width: 170px; }
-.footer-brand p,
-.footer-contact p {
-  margin: 10px 0 0;
-  font-weight: 700;
-  color: #35595c;
+.footer-grid > *:not(:first-child) {
+  border-inline-start: 1px solid rgba(7, 22, 61, 0.09);
+  padding-inline-start: 18px;
 }
-.footer-nav {
+.footer-logo { max-width: 145px; }
+.footer-brand {
+  text-align: center;
+  align-self: center;
+}
+.footer-brand .footer-logo {
+  display: block;
+  margin-inline: auto;
+}
+.footer-brand-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 12px;
+}
+.footer-brand-divider::before,
+.footer-brand-divider::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: #d2e5e8;
+}
+.footer-brand-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1ea94d;
+  margin: 0 8px;
+}
+.footer-contact-info {
   display: grid;
-  gap: 6px;
+  gap: 10px;
+  margin-top: 4px;
 }
-.footer-nav a,
-.footer-contact span {
-  color: var(--c-text-muted);
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.footer-icon-circle {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(30, 169, 77, 0.12);
+  color: #1ea94d;
+}
+.footer-contact-label {
+  font-weight: 700;
+  color: #07163d;
   font-size: 15px;
 }
-.footer-nav a:hover,
-.footer-contact a:hover { color: var(--c-primary-700); }
-.footer-contact {
-  display: grid;
-  gap: 5px;
+.footer-contact-value {
+  color: var(--c-text-muted);
+  font-size: 15px;
+  text-decoration: none;
 }
+.footer-contact-value:hover { color: var(--c-primary-700); }
+.footer-col-heading {
+  font-size: 17px;
+  font-weight: 800;
+  color: #07163d;
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #1ea94d;
+  display: inline-block;
+}
+.footer-legal .footer-col-heading {
+  border-bottom: 0;
+  position: relative;
+  padding-bottom: 10px;
+}
+.footer-legal .footer-col-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    rgba(30, 169, 77, 0.14) 0%,
+    rgba(30, 169, 77, 0.34) 30%,
+    rgba(30, 169, 77, 0.68) 50%,
+    rgba(30, 169, 77, 0.34) 70%,
+    rgba(30, 169, 77, 0.14) 100%
+  );
+}
+.footer-col-heading-no-line {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.footer-nav,
+.footer-legal {
+  display: grid;
+  gap: 8px;
+  padding-top: 10px;
+  justify-items: center;
+  text-align: center;
+}
+.footer-nav a,
+.footer-legal a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--c-text-muted);
+  font-size: 15px;
+  text-decoration: none;
+}
+.footer-arrow {
+  color: #1ea94d;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+.footer-nav a:hover,
+.footer-legal a:hover { color: var(--c-primary-700); }
 .footer-bottom {
-  margin-top: 16px;
-  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 14px;
   border-top: 1px solid #d9e9ec;
   text-align: center;
   color: #6b7f84;
   font-size: 14px;
+}
+.footer-shield {
+  color: #1ea94d;
+  flex-shrink: 0;
 }
 
 .lift-card:hover {
@@ -1629,6 +1756,17 @@ button, input, textarea { font: inherit; }
   .contact-grid,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+  .footer-nav,
+  .footer-legal {
+    padding-top: 0;
+  }
+  .footer-grid > *:not(:first-child) {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+  }
+  .footer-brand {
+    align-self: auto;
   }
   .hero-visual {
     order: -1;
