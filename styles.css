@@ -1361,8 +1361,8 @@ button, input, textarea { font: inherit; }
   background: #fff;
   box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
 }
-.contact-form { order: 1; }
-.contact-side { order: 2; background: linear-gradient(180deg, #f7fcf8, #f4fbf7); }
+.contact-form { order: 2; }
+.contact-side { order: 1; background: linear-gradient(180deg, #f7fcf8, #f4fbf7); }
 
 .contact-illustration {
   display: block;
