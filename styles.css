@@ -941,6 +941,10 @@ button, input, textarea { font: inherit; }
   margin-bottom: clamp(18px, 3vw, 34px);
 }
 
+#how .contact-banner {
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
 .how-video-head h2 {
   margin: 0;
   color: #1a2740;
