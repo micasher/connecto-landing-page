@@ -71,6 +71,44 @@ function setupFormMessage() {
   });
 }
 
+function setupResponsiveHeroImagePlacement() {
+  const grid = document.querySelector(".hero-grid");
+  const copy = document.querySelector(".hero-copy");
+  const visual = document.querySelector(".hero-visual");
+  const actions = document.querySelector(".hero-actions");
+
+  if (!grid || !copy || !visual || !actions) return;
+
+  const marker = document.createElement("span");
+  marker.hidden = true;
+  marker.setAttribute("aria-hidden", "true");
+  marker.className = "hero-visual-marker";
+  grid.insertBefore(marker, visual);
+
+  const mobileQuery = window.matchMedia("(max-width: 760px)");
+
+  function placeHeroImage() {
+    if (mobileQuery.matches) {
+      if (visual.parentElement !== copy) {
+        copy.insertBefore(visual, actions);
+      }
+      return;
+    }
+
+    if (visual.parentElement !== grid) {
+      grid.insertBefore(visual, marker.nextSibling);
+    }
+  }
+
+  placeHeroImage();
+
+  if (typeof mobileQuery.addEventListener === "function") {
+    mobileQuery.addEventListener("change", placeHeroImage);
+  } else {
+    mobileQuery.addListener(placeHeroImage);
+  }
+}
+
 function animateCounters() {
   const counters = document.querySelectorAll(".counter");
   if (!counters.length) return;
@@ -203,6 +241,7 @@ setupMobileMenu();
 setupFaqAccordion();
 setupSmoothScroll();
 setupFormMessage();
+setupResponsiveHeroImagePlacement();
 animateCounters();
 setupReveal();
 document.querySelectorAll(".carousel-wrapper").forEach(setupCarousel);
