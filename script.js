@@ -142,28 +142,46 @@ function setupCarousel(wrapper) {
 
   const items = Array.from(track.querySelectorAll(".carousel-item"));
   const totalItems = items.length;
-  const itemsPerRow = 3;
-  const gap = 24;
+  const desktopItems = Number(wrapper.dataset.carouselItemsDesktop || 3);
+  const tabletItems = Number(wrapper.dataset.carouselItemsTablet || Math.min(desktopItems, 3));
+  const mobileItems = Number(wrapper.dataset.carouselItemsMobile || Math.min(tabletItems, 2));
+  const gap = Number(wrapper.dataset.carouselGap || 24);
   let currentIndex = 0;
 
-  function getItemWidth() {
-    return (container.offsetWidth - gap * (itemsPerRow - 1)) / itemsPerRow;
+  function getVisibleItems() {
+    if (window.innerWidth <= 560) return Math.max(1, mobileItems);
+    if (window.innerWidth <= 900) return Math.max(1, tabletItems);
+    return Math.max(1, desktopItems);
+  }
+
+  function getMaxIndex(visibleItems) {
+    return Math.max(0, totalItems - visibleItems);
+  }
+
+  function getItemWidth(visibleItems) {
+    return (container.offsetWidth - gap * (visibleItems - 1)) / visibleItems;
   }
 
   function updateCarousel() {
-    const w = getItemWidth();
+    const visibleItems = Math.min(getVisibleItems(), totalItems);
+    const maxIndex = getMaxIndex(visibleItems);
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+    const w = getItemWidth(visibleItems);
     items.forEach((item) => { item.style.width = w + "px"; });
     const offset = currentIndex * (w + gap);
     track.style.transform = `translateX(${offset}px)`;
 
     prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex >= totalItems - itemsPerRow;
+    nextBtn.disabled = currentIndex >= maxIndex;
     prevBtn.style.opacity = prevBtn.disabled ? "0.35" : "1";
     nextBtn.style.opacity = nextBtn.disabled ? "0.35" : "1";
   }
 
   nextBtn.addEventListener("click", () => {
-    if (currentIndex < totalItems - itemsPerRow) {
+    const visibleItems = Math.min(getVisibleItems(), totalItems);
+    const maxIndex = getMaxIndex(visibleItems);
+    if (currentIndex < maxIndex) {
       currentIndex++;
       updateCarousel();
     }
