@@ -1133,6 +1133,20 @@ p {
   font-weight: 500;
   line-height: 1.5;
 }
+.result-metric-btn {
+  margin-top: 14px;
+  width: 100%;
+  background: transparent;
+  border: 2px solid #19c6c3;
+  color: #19c6c3;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.result-metric-btn:hover {
+  background: #19c6c3;
+  color: #fff;
+}
 .results-cta {
   margin-top: 36px;
   text-align: center;
