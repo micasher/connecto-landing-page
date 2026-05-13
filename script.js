@@ -53,7 +53,25 @@ function setupSmoothScroll() {
       if (!target) return;
 
       event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      const isMobileNavLink = !!link.closest(".mobile-nav");
+      let scrollTarget = target;
+
+      if (isMobileNavLink) {
+        const headingTarget = target.querySelector(
+          ".how-video-head, .contact-head, .section-head, .solution-head, .clients-head"
+        );
+
+        if (headingTarget) {
+          scrollTarget = headingTarget;
+        }
+      }
+
+      const header = document.querySelector(".site-header");
+      const headerOffset = (header ? header.offsetHeight : 0) + 14;
+      const top = scrollTarget.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+      window.scrollTo({ top, behavior: "smooth" });
     });
   });
 }
