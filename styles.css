@@ -1208,8 +1208,8 @@ p {
   border: 1px solid #d5e7ea;
   border-radius: 18px;
   padding: 28px 24px 24px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
   align-items: center;
   text-align: center;
   gap: 14px;
@@ -1236,7 +1236,7 @@ p {
   font-size: var(--fs-body);
   color: #3b5a5e;
   line-height: 1.7;
-  flex: 1;
+  margin: 0;
 }
 .review-stars {
   font-size: 22px;
@@ -1255,6 +1255,20 @@ p {
 @media (max-width: 860px) {
   .reviews-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 900px) {
+  #reviews .carousel-track {
+    align-items: stretch;
+  }
+
+  #reviews .carousel-item {
+    display: flex;
+  }
+
+  #reviews .review-card {
+    height: 100%;
   }
 }
 
