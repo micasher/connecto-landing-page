@@ -44,32 +44,34 @@ function setupFaqAccordion() {
 }
 
 function setupSmoothScroll() {
+  const scrollTargetMap = {
+    "#about": "#about .section-head",
+    "#how": "#solution .solution-head",
+    "#results": "#results .section-head",
+    "#faq": "#faq .section-head",
+    "#contact": "#contact .contact-head",
+    "#clients": "#clients .clients-head",
+    "#live-examples": "#live-examples .section-head",
+    "#reviews": "#reviews .section-head",
+    "#comparison": "#comparison .section-head"
+  };
+
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const targetId = link.getAttribute("href");
       if (!targetId || targetId === "#") return;
 
-      const target = document.querySelector(targetId);
+      const mappedSelector = scrollTargetMap[targetId];
+      const target = document.querySelector(mappedSelector || targetId);
       if (!target) return;
 
       event.preventDefault();
 
-      const isMobileNavLink = !!link.closest(".mobile-nav");
-      let scrollTarget = target;
-
-      if (isMobileNavLink) {
-        const headingTarget = target.querySelector(
-          ".how-video-head, .contact-head, .section-head, .solution-head, .clients-head"
-        );
-
-        if (headingTarget) {
-          scrollTarget = headingTarget;
-        }
-      }
-
       const header = document.querySelector(".site-header");
-      const headerOffset = (header ? header.offsetHeight : 0) + 14;
-      const top = scrollTarget.getBoundingClientRect().top + window.scrollY - headerOffset;
+      const headerOffset = (header ? header.offsetHeight : 0) + 6;
+      const top = targetId === "#top"
+        ? 0
+        : target.getBoundingClientRect().top + window.scrollY - headerOffset;
 
       window.scrollTo({ top, behavior: "smooth" });
     });
