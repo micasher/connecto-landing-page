@@ -2251,7 +2251,12 @@ p {
   }
 
   .example-logo {
-    height: 50px;
+    height: 88px;
+    padding: 10px;
+  }
+
+  .example-logo img {
+    max-height: 70px;
   }
 
   .btn-outline-examples {
