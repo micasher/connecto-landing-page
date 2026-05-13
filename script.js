@@ -91,6 +91,45 @@ function setupFormMessage() {
   });
 }
 
+function setupResultStoryModal() {
+  const modal = document.getElementById("story-modal");
+  const image = document.getElementById("story-modal-image");
+  const triggers = document.querySelectorAll("[data-result-story]");
+  const closeControls = document.querySelectorAll("[data-story-close]");
+
+  if (!modal || !image || !triggers.length) return;
+
+  function closeModal() {
+    modal.hidden = true;
+    image.removeAttribute("src");
+    document.body.style.overflow = "";
+  }
+
+  function openModal(src) {
+    image.src = src;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const src = trigger.getAttribute("data-result-story");
+      if (!src) return;
+      openModal(src);
+    });
+  });
+
+  closeControls.forEach((control) => {
+    control.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
+  });
+}
+
 function setupResponsiveHeroImagePlacement() {
   const grid = document.querySelector(".hero-grid");
   const copy = document.querySelector(".hero-copy");
@@ -261,6 +300,7 @@ setupMobileMenu();
 setupFaqAccordion();
 setupSmoothScroll();
 setupFormMessage();
+setupResultStoryModal();
 setupResponsiveHeroImagePlacement();
 animateCounters();
 setupReveal();

@@ -340,7 +340,7 @@
             </span>
             <strong class="result-metric-num counter" data-target="50000" data-prefix="₪">₪50,000</strong>
             <span class="result-metric-desc">הכנסה שנוספת ממבצעים<br>בערוצי WhatsApp / Telegram</span>
-            <button class="btn result-metric-btn" type="button">למידע נוסף</button>
+            <button class="btn result-metric-btn" type="button" data-result-story="media/client story 1.png">למידע נוסף</button>
           </article>
 
           <article class="result-metric">
@@ -349,7 +349,7 @@
             </span>
             <strong class="result-metric-num counter" data-target="4000" data-prefix="+">+4,000</strong>
             <span class="result-metric-desc">חברים חדשים ורלוונטיים<br>ב-30 יום</span>
-            <button class="btn result-metric-btn" type="button">למידע נוסף</button>
+            <button class="btn result-metric-btn" type="button" data-result-story="media/client story 2.png">למידע נוסף</button>
           </article>
 
           <article class="result-metric">
@@ -358,7 +358,7 @@
             </span>
             <strong class="result-metric-num counter" data-target="3500" data-prefix="+">+3,500</strong>
             <span class="result-metric-desc">כניסות לאתר<br>מכירה וממבצעים</span>
-            <button class="btn result-metric-btn" type="button">למידע נוסף</button>
+            <button class="btn result-metric-btn" type="button" data-result-story="media/client story 3.png">למידע נוסף</button>
           </article>
 
           <article class="result-metric">
@@ -367,7 +367,7 @@
             </span>
             <strong class="result-metric-num counter" data-target="10000" data-prefix="₪">₪10,000</strong>
             <span class="result-metric-desc">הכנסות ממכירות /<br>הודעה ממוקדת אחת</span>
-            <button class="btn result-metric-btn" type="button">למידע נוסף</button>
+            <button class="btn result-metric-btn" type="button" data-result-story="media/client story 4.png">למידע נוסף</button>
           </article>
         </div>
 
@@ -718,6 +718,14 @@
       </svg>
     </div>
   </footer>
+
+  <div class="story-modal" id="story-modal" hidden>
+    <div class="story-modal-backdrop" data-story-close></div>
+    <div class="story-modal-dialog" role="dialog" aria-modal="true" aria-label="תוצאת לקוח פעיל">
+      <button class="story-modal-close" type="button" aria-label="סגור" data-story-close>&times;</button>
+      <img class="story-modal-image" id="story-modal-image" alt="תוצאת לקוח פעיל" />
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
