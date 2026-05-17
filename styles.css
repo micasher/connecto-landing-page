@@ -1063,6 +1063,28 @@ p {
   box-shadow: 0 22px 44px rgba(12, 27, 45, 0.12), 0 2px 8px rgba(12, 27, 45, 0.08);
 }
 
+.about-story-card {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.about-story-card p {
+  margin: 0;
+  color: #334155;
+  font-size: var(--fs-body);
+  line-height: 1.8;
+}
+
+.about-story-card p + p {
+  margin-top: 14px;
+}
+
+#about-story {
+  background: #fff;
+}
+
 .results-section {
   background: #fff;
   color: var(--c-text);
@@ -1790,6 +1812,13 @@ p {
   display: block;
   margin-inline: auto;
 }
+.footer-brand-text {
+  margin: 8px auto 0;
+  max-width: 34ch;
+  color: var(--c-text-muted);
+  font-size: var(--fs-secondary);
+  line-height: 1.45;
+}
 .footer-brand-divider {
   display: flex;
   align-items: center;
@@ -2213,8 +2242,8 @@ p {
 }
 
 .client-logo-card img {
-  max-width: 88%;
-  max-height: 66px;
+  max-width: 85%;
+  max-height: 85%;
   object-fit: contain;
 }
 
