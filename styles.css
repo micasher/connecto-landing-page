@@ -1584,6 +1584,7 @@ p {
   display: block;
   width: min(100%, 300px);
   margin: 0 auto 12px;
+  border-radius: 16px;
 }
 
 .contact-side ul {
@@ -2227,24 +2228,18 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
-  border: 1px solid #e6edf1;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(25, 36, 58, 0.06);
-  padding: 12px;
-  transition: all 0.22s ease;
+  transition: transform 0.22s ease;
 }
 
 .client-logo-card:hover {
-  border-color: #19c6c3;
-  box-shadow: 0 8px 24px rgba(25, 198, 195, 0.12);
   transform: translateY(-3px);
 }
 
 .client-logo-card img {
-  max-width: 85%;
-  max-height: 85%;
+  max-width: 98%;
+  max-height: 98%;
   object-fit: contain;
+  border-radius: 12px;
 }
 
 .carousel-wrapper {
@@ -2324,6 +2319,7 @@ p {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
+  border-radius: 12px;
 }
 
 .example-content h3 {
