@@ -168,6 +168,73 @@ function setupResponsiveHeroImagePlacement() {
   }
 }
 
+function setupMobileHeaderAutoHide() {
+  const header = document.querySelector(".site-header");
+  const mobileNav = document.querySelector("[data-mobile-nav]");
+  const menuButton = document.querySelector("[data-menu-btn]");
+
+  if (!header) return;
+
+  const mobileQuery = window.matchMedia("(max-width: 1080px)");
+  let lastY = window.scrollY;
+  let ticking = false;
+  const minDelta = 6;
+
+  function showHeader() {
+    header.classList.remove("is-hidden-mobile");
+  }
+
+  function updateHeaderState() {
+    const currentY = window.scrollY;
+
+    if (!mobileQuery.matches) {
+      showHeader();
+      lastY = currentY;
+      ticking = false;
+      return;
+    }
+
+    const menuIsOpen = mobileNav?.classList.contains("open") || menuButton?.getAttribute("aria-expanded") === "true";
+    if (menuIsOpen || currentY <= 20) {
+      showHeader();
+      lastY = currentY;
+      ticking = false;
+      return;
+    }
+
+    if (currentY > lastY + minDelta) {
+      header.classList.add("is-hidden-mobile");
+    } else if (currentY < lastY - minDelta) {
+      showHeader();
+    }
+
+    lastY = currentY;
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateHeaderState);
+  }
+
+  function onViewportChange() {
+    showHeader();
+    lastY = window.scrollY;
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  menuButton?.addEventListener("click", showHeader);
+
+  if (typeof mobileQuery.addEventListener === "function") {
+    mobileQuery.addEventListener("change", onViewportChange);
+  } else {
+    mobileQuery.addListener(onViewportChange);
+  }
+
+  updateHeaderState();
+}
+
 function animateCounters() {
   const counters = document.querySelectorAll(".counter");
   if (!counters.length) return;
@@ -302,6 +369,7 @@ setupSmoothScroll();
 setupFormMessage();
 setupResultStoryModal();
 setupResponsiveHeroImagePlacement();
+setupMobileHeaderAutoHide();
 animateCounters();
 setupReveal();
 document.querySelectorAll(".carousel-wrapper").forEach(setupCarousel);
