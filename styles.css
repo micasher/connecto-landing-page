@@ -2105,7 +2105,9 @@ p {
 
   .contact-banner-content h2 {
     font-size: clamp(18px, 5.1vw, 24px);
-    white-space: nowrap;
+    white-space: normal;
+    text-wrap: balance;
+    max-width: 24ch;
     line-height: 1.15;
   }
 
