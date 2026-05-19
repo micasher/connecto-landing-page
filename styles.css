@@ -2424,6 +2424,27 @@ p {
   height: 20px;
 }
 
+.ios-safari .carousel-btn svg {
+  display: none;
+}
+
+.ios-safari .carousel-btn::before {
+  display: block;
+  font-family: "Arial", sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1;
+  color: currentColor;
+}
+
+.ios-safari .carousel-btn-prev::before {
+  content: "‹";
+}
+
+.ios-safari .carousel-btn-next::before {
+  content: "›";
+}
+
 .examples-cta {
   text-align: center;
 }

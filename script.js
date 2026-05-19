@@ -422,6 +422,44 @@ function setupCarousel(wrapper) {
   updateCarousel();
 }
 
+function setupIOSSafariFallbacks() {
+  const ua = navigator.userAgent || "";
+  const isIOSDevice = /iPad|iPhone|iPod/.test(ua)
+    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const isWebKit = /WebKit/i.test(ua);
+  const isAltBrowser = /CriOS|FxiOS|EdgiOS|OPiOS/i.test(ua);
+
+  if (!isIOSDevice || !isWebKit || isAltBrowser) return;
+
+  document.documentElement.classList.add("ios-safari");
+
+  const dashboardImage = document.querySelector(".how-dashboard-frame img");
+  if (!dashboardImage) return;
+
+  // iOS Safari can occasionally skip lazy-loading this image below the iframe.
+  dashboardImage.setAttribute("loading", "eager");
+  dashboardImage.setAttribute("decoding", "sync");
+  dashboardImage.setAttribute("fetchpriority", "high");
+
+  function nudgePaint() {
+    dashboardImage.style.webkitTransform = "translateZ(0)";
+    dashboardImage.style.transform = "translateZ(0)";
+  }
+
+  if (dashboardImage.complete) {
+    nudgePaint();
+    return;
+  }
+
+  dashboardImage.addEventListener("load", nudgePaint, { once: true });
+  dashboardImage.addEventListener("error", () => {
+    const src = dashboardImage.getAttribute("src");
+    if (!src) return;
+    const separator = src.includes("?") ? "&" : "?";
+    dashboardImage.setAttribute("src", `${src}${separator}ios_retry=${Date.now()}`);
+  }, { once: true });
+}
+
 setYear();
 setupMobileMenu();
 setupFaqAccordion();
@@ -432,4 +470,5 @@ setupResponsiveHeroImagePlacement();
 setupMobileHeaderAutoHide();
 animateCounters();
 setupReveal();
+setupIOSSafariFallbacks();
 document.querySelectorAll(".carousel-wrapper").forEach(setupCarousel);
