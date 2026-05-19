@@ -1659,6 +1659,14 @@ p {
 }
 .field { display: grid; gap: 6px; position: relative; }
 .field-full { grid-column: 1 / -1; }
+.hp-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
 .field label {
   position: absolute;
   width: 1px;
@@ -1738,6 +1746,24 @@ p {
   font-weight: 700;
 }
 .form-success.show { display: block; }
+.form-error {
+  grid-column: 1 / -1;
+  display: none;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #f2b7c0;
+  background: #fff4f6;
+  color: #b42342;
+  font-size: 14px;
+  font-weight: 700;
+}
+.form-error.show { display: block; }
+
+.contact-form.is-loading .btn-gradient {
+  opacity: 0.8;
+  cursor: wait;
+}
 
 @media (max-width: 900px) {
   .contact-grid {

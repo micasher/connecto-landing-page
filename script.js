@@ -81,13 +81,73 @@ function setupSmoothScroll() {
 function setupFormMessage() {
   const form = document.getElementById("lead-form");
   const successMessage = document.getElementById("form-success");
+  const errorMessage = document.getElementById("form-error");
+  const submitButton = form?.querySelector('button[type="submit"]');
 
-  if (!form || !successMessage) return;
+  if (!form || !successMessage || !errorMessage || !submitButton) return;
 
-  form.addEventListener("submit", (event) => {
+  // Replace this with your deployed Google Apps Script Web App /exec URL.
+  const LEADS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzsvhwUwpJuFuh8SW-4lw7XZnC1KNXuRywc2pLqqHQjR2ATAjlFj9x3f9nhLOG_hEoGWg/exec";
+
+  function setMessageState(type) {
+    successMessage.classList.remove("show");
+    errorMessage.classList.remove("show");
+
+    if (type === "success") successMessage.classList.add("show");
+    if (type === "error") errorMessage.classList.add("show");
+  }
+
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    successMessage.classList.add("show");
-    form.reset();
+
+    const honeypot = form.querySelector('input[name="website"]');
+    if (honeypot && honeypot.value.trim()) return;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    if (!LEADS_WEB_APP_URL.includes("/exec")) {
+      setMessageState("error");
+      return;
+    }
+
+    const formData = new FormData(form);
+    const payload = {
+      fullName: (formData.get("fullName") || "").toString().trim(),
+      businessName: (formData.get("businessName") || "").toString().trim(),
+      phone: (formData.get("phone") || "").toString().trim(),
+      email: (formData.get("email") || "").toString().trim(),
+      details: (formData.get("details") || "").toString().trim(),
+      source: "connecto-landing-page",
+      pageUrl: window.location.href,
+      userAgent: navigator.userAgent,
+      submittedAt: new Date().toISOString()
+    };
+
+    const body = new URLSearchParams(payload);
+
+    form.classList.add("is-loading");
+    submitButton.disabled = true;
+    setMessageState(null);
+
+    try {
+      // Apps Script Web Apps are cross-origin; no-cors lets the browser send the request.
+      await fetch(LEADS_WEB_APP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body
+      });
+
+      setMessageState("success");
+      form.reset();
+    } catch (error) {
+      setMessageState("error");
+    } finally {
+      form.classList.remove("is-loading");
+      submitButton.disabled = false;
+    }
   });
 }
 

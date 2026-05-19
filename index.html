@@ -648,6 +648,11 @@
         </aside>
 
         <form class="contact-form lift-card reveal" id="lead-form" action="#" novalidate>
+          <div class="field hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
           <div class="field">
             <label for="full-name">שם מלא</label>
             <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="שם מלא" required />
@@ -676,6 +681,7 @@
           <button class="btn btn-gradient" type="submit">לתיאום שיחה קצרה</button>
           <p class="form-note">ללא התחייבות • שיחה קצרה • התאמה אישית לעסק שלכם</p>
           <p class="form-success" id="form-success" role="status" aria-live="polite">תודה, קיבלנו את הפרטים ונחזור אליכם בהקדם.</p>
+          <p class="form-error" id="form-error" role="alert" aria-live="assertive">אירעה תקלה בשליחה. נסו שוב או פנו אלינו בטלפון.</p>
         </form>
       </div>
     </section>
