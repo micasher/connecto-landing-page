@@ -2288,12 +2288,14 @@ p {
   flex: 1;
   overflow: hidden;
   border-radius: 16px;
+  touch-action: pan-y;
 }
 
 .carousel-track {
   display: flex;
   align-items: stretch;
   gap: 24px;
+  direction: ltr;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
 }

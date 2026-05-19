@@ -370,7 +370,13 @@ function setupCarousel(wrapper) {
   const tabletItems = Number(wrapper.dataset.carouselItemsTablet || Math.min(desktopItems, 3));
   const mobileItems = Number(wrapper.dataset.carouselItemsMobile || Math.min(tabletItems, 2));
   const gap = Number(wrapper.dataset.carouselGap || 24);
+  // prevBtn (data-carousel-prev) is placed first in DOM → right side in RTL wrapper.
+  const rightButton = prevBtn;
+  const leftButton = nextBtn;
   let currentIndex = 0;
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchLocked = false;
 
   function getVisibleItems() {
     if (window.innerWidth <= 560) return Math.max(1, mobileItems);
@@ -386,6 +392,22 @@ function setupCarousel(wrapper) {
     return (container.offsetWidth - gap * (visibleItems - 1)) / visibleItems;
   }
 
+  function goNext() {
+    const visibleItems = Math.min(getVisibleItems(), totalItems);
+    const maxIndex = getMaxIndex(visibleItems);
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateCarousel();
+    }
+  }
+
+  function goPrev() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  }
+
   function updateCarousel() {
     const visibleItems = Math.min(getVisibleItems(), totalItems);
     const maxIndex = getMaxIndex(visibleItems);
@@ -394,29 +416,57 @@ function setupCarousel(wrapper) {
     const w = getItemWidth(visibleItems);
     items.forEach((item) => { item.style.width = w + "px"; });
     const offset = currentIndex * (w + gap);
-    track.style.transform = `translateX(${offset}px)`;
+    track.style.transform = `translateX(${-offset}px)`;
 
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex >= maxIndex;
-    prevBtn.style.opacity = prevBtn.disabled ? "0.35" : "1";
-    nextBtn.style.opacity = nextBtn.disabled ? "0.35" : "1";
+    rightButton.disabled = currentIndex >= maxIndex;
+    leftButton.disabled = currentIndex === 0;
+    rightButton.style.opacity = rightButton.disabled ? "0.35" : "1";
+    leftButton.style.opacity = leftButton.disabled ? "0.35" : "1";
   }
 
-  nextBtn.addEventListener("click", () => {
-    const visibleItems = Math.min(getVisibleItems(), totalItems);
-    const maxIndex = getMaxIndex(visibleItems);
-    if (currentIndex < maxIndex) {
-      currentIndex++;
-      updateCarousel();
-    }
-  });
+  rightButton.addEventListener("click", goNext);
 
-  prevBtn.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateCarousel();
+  leftButton.addEventListener("click", goPrev);
+
+  container.addEventListener("touchstart", (event) => {
+    const touch = event.changedTouches[0];
+    if (!touch) return;
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+    touchLocked = false;
+  }, { passive: true });
+
+  container.addEventListener("touchmove", (event) => {
+    if (touchLocked) return;
+    const touch = event.changedTouches[0];
+    if (!touch) return;
+
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+
+    // Only lock when horizontal intent is clearly stronger than vertical scroll.
+    if (Math.abs(deltaX) > 16 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      touchLocked = true;
     }
-  });
+  }, { passive: true });
+
+  container.addEventListener("touchend", (event) => {
+    const touch = event.changedTouches[0];
+    if (!touch) return;
+
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+    const swipeThreshold = 42;
+
+    if (Math.abs(deltaX) < swipeThreshold || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+
+    // Swipe left = advance forward (goNext), swipe right = go back (goPrev).
+    if (deltaX < 0) {
+      goNext();
+    } else {
+      goPrev();
+    }
+  }, { passive: true });
 
   window.addEventListener("resize", updateCarousel);
   updateCarousel();
